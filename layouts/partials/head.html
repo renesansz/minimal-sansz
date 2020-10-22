@@ -1,0 +1,19 @@
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Language" content="{{ .Site.Language.Lang }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="description" content="{{ .Description | default (.Summary | default .Site.Params.description ) }}" />
+  <meta name="keywords" content="{{ (delimit .Keywords ",") | default .Site.Params.keywords }}" />
+
+  <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+
+  {{ if eq .Hugo.Environment "production" }}
+    {{ $options := (dict "targetPath" "css/style.css" "outputStyle" "compressed" "enableSourceMap" false) }}
+    {{ $style := resources.Get "css/main.scss" | resources.ToCSS $options | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" />
+  {{ else }}
+    {{ $options := (dict "targetPath" "css/style.css" "enableSourceMap" true) }}
+    {{ $style := resources.Get "css/main.scss" | resources.ToCSS $options }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" />
+  {{ end }}
+</head>
