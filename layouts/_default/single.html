@@ -1,16 +1,11 @@
 {{ define "page-header" }}
-  <header class="page-header">
-    <h1>{{ .Title }}</h1>
-    {{ with .Params.subtitle }}
-      <span class="subtitle">{{ . }}</span>
-    {{ end }}
-  </header>
+  {{- partial "header/site-header.html" . -}}
 {{ end }}
 
 {{ define "main" }}
-  <div class="content">
+  <main class="content">
     {{ .Content }}
-  </div>
+  </main>
 {{ end }}
 
 {{ define "page-footer" }}

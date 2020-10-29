@@ -7,16 +7,16 @@
 
   <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
-  {{ $criticalCSS := resources.Get "css/critical.scss" | resources.ToCSS (dict "outputStyle" "compressed")  }}
+  {{ $criticalCSS := resources.Get "scss/critical.scss" | resources.ToCSS (dict "outputStyle" "compressed")  }}
   <style>{{ $criticalCSS.Content | safeCSS }}</style>
 
   {{ if eq .Hugo.Environment "production" }}
     {{ $options := (dict "targetPath" "css/style.css" "outputStyle" "compressed" "enableSourceMap" false) }}
-    {{ $style := resources.Get "css/main.scss" | resources.ToCSS $options | resources.Fingerprint }}
+    {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options | resources.Fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" />
   {{ else }}
     {{ $options := (dict "targetPath" "css/style.css" "enableSourceMap" true) }}
-    {{ $style := resources.Get "css/main.scss" | resources.ToCSS $options }}
+    {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" />
   {{ end }}
 </head>
