@@ -1,22 +1,16 @@
 <head>
   <meta charset="utf-8" />
+
+  {{ hugo.Generator }}
+
   <meta http-equiv="Content-Language" content="{{ .Site.Language.Lang }}" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <meta name="description" content="{{ .Description | default (.Summary | default .Site.Params.description ) }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+  <meta name="description" content="{{ .Site.Params.description | default (.Summary | default .Description ) }}" />
   <meta name="keywords" content="{{ (delimit .Keywords ",") | default .Site.Params.keywords }}" />
+  <meta name="color-scheme" content="dark light">
 
   <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
   {{ $criticalCSS := resources.Get "scss/critical.scss" | resources.ToCSS (dict "outputStyle" "compressed")  }}
-  <style>{{ $criticalCSS.Content | safeCSS }}</style>
-
-  {{ if eq .Hugo.Environment "production" }}
-    {{ $options := (dict "targetPath" "css/style.css" "outputStyle" "compressed" "enableSourceMap" false) }}
-    {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options | resources.Fingerprint }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}" />
-  {{ else }}
-    {{ $options := (dict "targetPath" "css/style.css" "enableSourceMap" true) }}
-    {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}" />
-  {{ end }}
+  <style media="screen">{{ $criticalCSS.Content | safeCSS }}</style>
 </head>

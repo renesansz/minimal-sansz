@@ -1,0 +1,9 @@
+.btn {
+  &.btn--icon {
+    background: transparent;
+    border-radius: 90%;
+    border: none;
+    color: currentColor;
+    padding: 1px 4px;
+  }
+}

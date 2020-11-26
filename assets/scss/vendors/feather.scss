@@ -1,0 +1,12 @@
+$iconSize: 30px;
+$iconStroke: 2;
+
+.feather {
+  width: $iconSize;
+  height: $iconSize;
+  stroke: currentColor;
+  stroke-width: $iconStroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}

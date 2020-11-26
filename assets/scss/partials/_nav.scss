@@ -1,0 +1,22 @@
+#site-nav {
+  .content {
+    display: flex;
+    justify-content: flex-end;
+    min-height: 80px;
+    align-items: center;
+
+    @media screen and (max-width: $tablet-min-width) {
+      min-height: 50px;
+    }
+  }
+  #menu-toggle {
+    color: var(--link-color);
+  }
+  #menu {
+    padding: 0 16px;
+
+    a {
+      font-weight: 500;
+    }
+  }
+}

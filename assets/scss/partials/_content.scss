@@ -1,0 +1,9 @@
+.content {
+  .banner {
+    font-size: 48px;
+
+    @media screen and (max-width: $tablet-min-width) {
+      text-align: center;
+    }
+  }
+}

@@ -1,2 +1,20 @@
-<nav aria-labelledby="primary-navigation">
-</nav>
+<div id="site-nav">
+  <div class="content">
+    <nav id="menu" aria-label="menu">
+      <ul class="inline-list unstyled-list">
+        {{ range $nav := .Site.Data.sitenav }}
+          <li>
+            <a href="{{ $nav.url }}">{{ $nav.title }}</a>
+          </li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+  <template id="menu-toggle-template">
+    <button class="menu-toggle btn btn--icon hidden" aria-label="toggle menu">
+      <span class="menu-icon">{{ partial "utils/feather-icon" "menu" }}</span>
+      <span class="close-icon">{{ partial "utils/feather-icon" "x" }}</span>
+    </button>
+  </template>
+  {{ partial "utils/js-module" "js/site-nav.js" }}
+</div>

@@ -1,8 +1,29 @@
 body {
-  margin: 0;
   font-family: $default-font;
+  font-weight: 300;
+  @include smooth-font;
+
+  @media screen and (max-width: $tablet-min-width) {
+    margin: 16px;
+  }
 }
+
 code, kbd,
 samp, pre {
   font-family: $default-monospace-font;
+}
+
+h1,h2,h3,
+h4,h5,h6 {
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 400;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
 }

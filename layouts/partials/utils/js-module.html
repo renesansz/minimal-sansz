@@ -1,0 +1,8 @@
+{{ if eq hugo.Environment "production" }}
+  {{ $js := resources.Get . | js.Build (dict "minify" true "avoidTDZ" true) }}
+  {{ $secureJS := $js | resources.Fingerprint "sha512" }}
+  <script src="{{ $secureJS.Permalink }}" type="module" integrity="{{ $secureJS.Data.Integrity }}"></script>
+{{ else }}
+  {{ $js := resources.Get . | js.Build }}
+  <script src="{{ $js.Permalink }}" type="module"></script>
+{{ end }}

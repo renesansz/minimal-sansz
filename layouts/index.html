@@ -1,5 +1,7 @@
 {{ define "main" }}
-  <main class="content">
+  {{- partial "header/site-nav" . -}}
+  <main id="home" class="content">
     {{ .Content }}
+    {{- partial "sections/social" . -}}
   </main>
 {{ end }}

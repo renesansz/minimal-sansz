@@ -1,0 +1,22 @@
+@import "modules/color";
+
+:root {
+  --bg-color: #{map-get($map: $neutral-colors, $key: "white")};
+  --text-color: #{map-get($map: $neutral-colors, $key: "dark")};
+  --link-color: #{map-get($map: $orange-accent, $key: "dark")};
+
+  @media (prefers-color-scheme: dark) {
+    --bg-color: #{map-get($map: $neutral-colors, $key: "darkest")};
+    --text-color: #{map-get($map: $neutral-colors, $key: "lightest")};
+    --link-color: #{map-get($map: $orange-accent, $key: "base")};
+  }
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+
+  a {
+    color: var(--link-color);
+  }
+}

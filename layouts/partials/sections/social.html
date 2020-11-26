@@ -1,0 +1,7 @@
+<ul id="social" class="inline-list unstyled-list">
+  {{ range $link := .Site.Data.social }}
+    <li>
+      <a href="{{ $link.url }}" aria-label="{{ $link.title }}" title="{{ $link.title }}">{{ partial "utils/feather-icon" $link.icon }}</a>
+    </li>
+  {{ end }}
+</ul>

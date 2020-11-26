@@ -1,7 +1,42 @@
-$light-mode: (
-  $primary-color: #000
+$neutral-colors: (
+  "darkest": #121212,
+  "dark": #393939,
+  "base": #7D7D7D,
+  "light": #9A9A9A,
+  "lightest": #C9C9C9,
+
+  "white": #FDFDFD,
+  "black": #101010
 );
 
-$dark-mode: (
-  $primary-color: #FFF
+$blue-accent: (
+  "darkest": #002579,
+  "dark": #1354D8,
+  "base": #3378FB,
+  "light": #5990FB,
+  "lightest": #7BA7F5
+);
+
+$green-accent: (
+  "darkest": #00600B,
+  "dark": #00AF1E,
+  "base": #00FF2D,
+  "light": #31F150,
+  "lightest": #68F57D
+);
+
+$yellow-accent: (
+  "darkest": #5D6900,
+  "dark": #97AF00,
+  "base": #CEEC00,
+  "light": #DFFB35,
+  "lightest": #E7FF62,
+);
+
+$orange-accent: (
+  "darkest": #604100,
+  "dark": #986800,
+  "base": #F3AF00,
+  "light": #FBBC5F,
+  "lightest": #FFD569
 );

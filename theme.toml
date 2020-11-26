@@ -23,6 +23,9 @@ features = [
 ]
 min_version = "0.41.0"
 
+[params]
+  acknowledgement = true
+
 [author]
   name = "Renemari Padillo"
   homepage = "https://renesansz.me"

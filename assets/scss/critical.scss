@@ -1,5 +1,13 @@
 @import "vendors/normalize";
+@import "vendors/feather";
 
-@import "modules/typography";
+@import "modules/all";
+@import "mixins/all";
+
+@import "partials/lists";
+@import "partials/nav";
 @import "partials/layouts";
+@import "partials/content";
 @import "partials/reset";
+
+@import "utils";

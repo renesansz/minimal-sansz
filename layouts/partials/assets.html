@@ -1,0 +1,12 @@
+{{ if eq hugo.Environment "production" }}
+  {{ $options := (dict "targetPath" "css/style.css" "outputStyle" "compressed" "enableSourceMap" false) }}
+  {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options | resources.Fingerprint }}
+  {{ $secureStyle := $style | resources.Fingerprint "sha512" }}
+  <link rel="preload" href="{{ $secureStyle.Permalink }}" media="screen" integrity="{{ $secureStyle.Data.Integrity }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ $secureStyle.Permalink }}" media="screen" integrity="{{ $secureStyle.Data.Integrity }}"></noscript>
+{{ else }}
+  {{ $options := (dict "targetPath" "css/style.css" "enableSourceMap" true) }}
+  {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $options }}
+  <link rel="preload" href="{{ $style.Permalink }}" as="style" media="screen" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="{{ $style.Permalink }}" media="screen"></noscript>
+{{ end }}

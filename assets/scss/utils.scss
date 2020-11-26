@@ -1,0 +1,38 @@
+// List stylings
+li, ul {
+  &.unstyled-list {
+    li {
+      list-style: none;
+    }
+  }
+  &.inline-list {
+    padding-right: 0;
+    padding-left: 0;
+    display: flex;
+
+    li {
+      &:not(:first-child) {
+        margin-left: 12px;
+      }
+      &:not(:last-child) {
+        margin-right: 12px;
+      }
+    }
+  }
+}
+
+// Display
+
+.hidden {
+  display: none !important;
+}
+
+.invisible {
+  opacity: 0 !important;
+}
+
+// Transition
+
+.has-transition {
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}

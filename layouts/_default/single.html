@@ -1,13 +1,16 @@
 {{ define "page-header" }}
-  {{- partial "header/site-header.html" . -}}
+  {{- partial "header/site-header" . -}}
 {{ end }}
 
 {{ define "main" }}
   <main class="content">
+    {{ if .Params.banner }}
+      <p class="banner">{{ .Params.banner }}</p>
+    {{ end }}
     {{ .Content }}
   </main>
 {{ end }}
 
 {{ define "page-footer" }}
-  {{- partial "footer/site-footer.html" . -}}
+  {{- partial "footer/site-footer" . -}}
 {{ end }}

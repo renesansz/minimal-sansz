@@ -1,6 +1,11 @@
 .content {
-  @media screen and (min-width: 769px) {
-    max-width: 768px;
-    margin: auto;
+  max-width: $desktop-content-size;
+  margin: auto;
+
+  @media screen and (max-width: $tablet-max-width) {
+    max-width: calc(#{$tablet-content-size} + 256px);
+  }
+  @media screen and (max-width: $tablet-min-width) {
+    max-width: $tablet-content-size;
   }
 }

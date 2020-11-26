@@ -1,2 +1,6 @@
-<footer class="page-footer" role="presentation">
+<footer class="page-footer">
+  {{ block "footer-content" . }}{{ end }}
+  {{ with .Site.Params.acknowledgement | default true }}
+    {{- partial "footer/acknowledgement" . -}}
+  {{ end }}
 </footer>
