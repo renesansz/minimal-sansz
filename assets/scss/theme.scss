@@ -13,10 +13,17 @@
 }
 
 body {
+  // Fallback support for old browsers that does not support CSS Variables
+  background: map-get($map: $neutral-colors, $key: "white");
+  color: map-get($map: $neutral-colors, $key: "dark");
+
   background: var(--bg-color);
   color: var(--text-color);
 
   a {
+    // Fallback support for old browsers that does not support CSS Variables
+    color: map-get($map: $orange-accent, $key: "dark");
+
     color: var(--link-color);
   }
 }
