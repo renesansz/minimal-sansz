@@ -8,15 +8,14 @@
     @media screen and (max-width: $tablet-min-width) {
       min-height: 50px;
     }
+    a {
+      font-weight: 600;
+    }
   }
   #menu-toggle {
-    color: var(--link-color);
-  }
-  #menu {
-    padding: 0 16px;
+    // Fallback support for old browsers that does not support CSS Variables
+    color: map-get($map: $orange-accent, $key: "dark");
 
-    a {
-      font-weight: 500;
-    }
+    color: var(--link-color);
   }
 }
