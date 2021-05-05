@@ -6,8 +6,8 @@
   --link-color: #{map-get($map: $orange-accent, $key: "dark")};
 
   @media (prefers-color-scheme: dark) {
-    --bg-color: #{map-get($map: $neutral-colors, $key: "darkest")};
-    --text-color: #{map-get($map: $neutral-colors, $key: "lightest")};
+    --bg-color: #{map-get($map: $neutral-colors, $key: "dark")};
+    --text-color: #{map-get($map: $neutral-colors, $key: "white")};
     --link-color: #{map-get($map: $orange-accent, $key: "base")};
   }
 }
