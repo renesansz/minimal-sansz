@@ -1,9 +1,16 @@
 .content {
-  .banner {
+  .title {
     font-size: 48px;
 
     @media screen and (max-width: $tablet-min-width) {
       text-align: center;
+    }
+  }
+  .banner {
+    margin: 4rem 0;
+
+    @media screen and (min-width: $tablet-min-width) {
+      margin: 6rem 0;
     }
   }
 }
