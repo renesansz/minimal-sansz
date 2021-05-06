@@ -1,5 +1,4 @@
 @import "vendors/normalize";
-@import "vendors/feather";
 
 @import "modules/all";
 @import "mixins/all";
@@ -9,5 +8,8 @@
 @import "partials/layouts";
 @import "partials/content";
 @import "partials/reset";
+@import "partials/card/critical";
 
 @import "utils";
+
+@import "theme";

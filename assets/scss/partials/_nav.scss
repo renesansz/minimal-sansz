@@ -13,9 +13,7 @@
     }
   }
   #menu-toggle {
-    // Fallback support for old browsers that does not support CSS Variables
-    color: map-get($map: $orange-accent, $key: "dark");
-
+    color: map-get($map: $orange-accent, $key: "dark"); // Fallback support for old browsers that does not support CSS Variables
     color: var(--link-color);
   }
 }

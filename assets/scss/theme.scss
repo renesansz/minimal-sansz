@@ -1,29 +1,22 @@
-@import "modules/color";
-
 :root {
   --bg-color: #{map-get($map: $neutral-colors, $key: "white")};
-  --text-color: #{map-get($map: $neutral-colors, $key: "dark")};
+  --text-color: #{map-get($map: $neutral-colors, $key: "black")};
   --link-color: #{map-get($map: $orange-accent, $key: "dark")};
+  --card-color: #{map-get($map: $neutral-colors, $key: "pure_white")};
 
   @media (prefers-color-scheme: dark) {
     --bg-color: #{map-get($map: $neutral-colors, $key: "dark")};
     --text-color: #{map-get($map: $neutral-colors, $key: "white")};
     --link-color: #{map-get($map: $orange-accent, $key: "base")};
+    --card-color: #{map-get($map: $neutral-colors, $key: "black")};
   }
 }
 
 body {
-  // Fallback support for old browsers that does not support CSS Variables
-  background: map-get($map: $neutral-colors, $key: "white");
-  color: map-get($map: $neutral-colors, $key: "dark");
-
   background: var(--bg-color);
   color: var(--text-color);
 
   a {
-    // Fallback support for old browsers that does not support CSS Variables
-    color: map-get($map: $orange-accent, $key: "dark");
-
     color: var(--link-color);
   }
 }

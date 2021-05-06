@@ -5,8 +5,11 @@ $neutral-colors: (
   "light": #9A9A9A,
   "lightest": #C9C9C9,
 
-  "white": #FDFDFD,
-  "black": #101010
+  "pure_white": #FFF,
+  "pure_black": #000,
+
+  "white": #F4F4F4,
+  "black": #393939
 );
 
 $blue-accent: (
@@ -36,7 +39,7 @@ $yellow-accent: (
 $orange-accent: (
   "darkest": #604100,
   "dark": #986800,
-  "base": #F3AF00,
+  "base": #ffa000,
   "light": #FBBC5F,
   "lightest": #FFD569
 );

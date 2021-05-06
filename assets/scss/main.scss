@@ -1,4 +1,7 @@
-@import "theme";
 @import "modules/all";
 
+@import "vendors/feather";
+
+@import "partials/acknowledgement";
 @import "partials/buttons";
+@import "partials/card/non-critical";
